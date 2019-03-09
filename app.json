@@ -1,0 +1,67 @@
+{
+  "pages": [
+    
+    "pages/Firstpage/Firstpage",
+    "pages/Firstpage/Create_thing/Create_thing", 
+    "pages/second_dimensional_code/second_dimensional_code",
+    "pages/message/message",
+    "pages/Firstpage/publish/publish",
+    "pages/Firstpage/showlost/showlost",
+    "pages/Firstpage/showpick_up/showpick_up",
+    "pages/second_dimensional_code/print_code/print_code",
+    "pages/me/me",
+    "login/login",
+    "pages/center/center",
+    "pages/center/pick_up/pick_up",
+    "pages/center/lost/lost",
+    "pages/Firstpage/saoyisao/saoyisao"
+    
+    
+  ],
+  "tabBar": {
+    "color": "#9BABBA",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/Firstpage/Firstpage",
+        "text": "首页",
+        "iconPath": "image/firstpage_1.png",
+        "selectedIconPath": "image/firstpage_2.png"
+      },
+      {
+        "pagePath": "pages/second_dimensional_code/second_dimensional_code",
+        "text": "二维码",
+        "iconPath": "image/second_1.png",
+        "selectedIconPath": "image/second_2.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "发布",
+        "iconPath": "image/publish_1.png",
+        "selectedIconPath": "image/publish_2.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "image/message_1.png",
+        "selectedIconPath": "image/message_2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "image/person_1.png",
+        "selectedIconPath": "image/person_3.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#118fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "backgroundColor": "#118fff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}

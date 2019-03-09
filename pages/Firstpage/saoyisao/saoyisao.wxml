@@ -1,0 +1,24 @@
+<!--start.wxml-->
+<view class="container">
+
+  <block>
+    <image class="title" src="http://img.hcfyww.net/image/x-go-2.png"></image>
+    <!--放置信果logo-->
+    <view class="content">
+
+      <view class="bd">
+        <view class="main-body">
+          <form bindsubmit="formLogin">
+            <view>
+              <!--点击联系失主，跳到聊天界面-->
+              <button class="btn-login" hover-class="btn-login-hover" form-type="submit">联系失主</button>
+              <!--点击取消，跳到首页，为何取消实现不了跳转-->
+             
+            </view>
+          </form>
+        </view>
+        <text class="copyright">© 2019 梦之队团队 倾情出品</text>
+      </view>
+    </view>
+  </block>
+</view>

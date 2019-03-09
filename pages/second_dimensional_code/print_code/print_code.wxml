@@ -1,0 +1,40 @@
+
+<!-- 新建活动 -->
+<view class="add-page">
+  <form bindsubmit="submitForm">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{TopTips}}</view>
+    <view class="mod-a mt20">
+      <!-- 物品类型 -->
+      <view class="mod t-sign-time">
+        <text class="key">请选择物品名称</text>
+        <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}" style="width:180px;height:46.8px;">
+          <view class="value" name="types">{{types[typeIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class='Line'></view>
+    </view>
+
+  <view class='show-tipAndchoose'>
+    <view class='tip'>请选择第几号机器进行雕刻</view>
+    <view class='choose-list'>
+      <view style='width:80rpx;width:80rpx;margin-left: 20rpx;' wx:for="{{number}}" bindtap='collectTap'>
+        <view class='choose' wx:if="{{isClick}}" >
+          <view style='width:40rpx;height:40rpx;margin-bottom:50rpx;margin-left:30rpx;'>{{item.n}}
+          </view>
+        </view>
+        <view class='choose2' wx:else="{{!isClick}}"> <!--为何点击不变红-->
+          <view style='width:40rpx;height:40rpx;margin-bottom:50rpx;margin-left:30rpx;'>{{item.n}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <view class="mod-a mt20">
+      <view class="submit-btn">
+        <button class='button' loading="{{isLoading}}" hover-start-time="200" disabled="{{isdisabled}}" formType="submit">确认雕刻</button>
+      </view>
+    </view>
+  </form>
+</view>

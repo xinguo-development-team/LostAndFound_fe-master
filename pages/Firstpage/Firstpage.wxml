@@ -1,0 +1,187 @@
+<!--pages/Firstpage/Firstpage.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索框-->
+  <view class="search-bar">
+    <view bindtap='Create_thing'>
+      <image src='http://img.hcfyww.net/image/jia.png' style='height:30px;width:30px;margin-left:20rpx;'></image>
+    </view>
+    <view class="search-box">
+      <icon class="icon-search" color="grey" type="search" size="16"></icon>
+      <icon class="icon-clear" type="clear" size="14" wx:if="{{searchBtnShow}}" bindtap='cancelBtnTap'></icon>
+      <input type="text" class="search-input" type='text' confirm-type='search' placeholder="搜索" value='{{searchInput}}' focus="{{inputFocus}}" bindinput="inputChangeTap" bindfocus="FocusTap" bindconfirm="inputConfirmTap" />
+    </view>
+    <!--扫拾到物品的二维码-->
+    <view class="cancel-btn" bindtap='getScancode'>
+      <image src='http://img.hcfyww.net/image/saoyisao.png' style='height:25px;width:25px;' ></image>
+    </view>
+    <!--获取扫描获得的二维码信息：-->
+    <!--<view wx:if="{{result !=''}}">
+    <view>扫码的内容:{{result}}</view>
+  </view>-->
+  </view>
+  <view class="xg_swiper">
+    <!-- 轮播图 start-->
+    <swiper indicator-dots="true" indicator-active-color="white" autoplay="true" interval="5000" duration="1000" class='swiper_box'>
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播图 end-->
+    <!--导航栏-->
+    <view class='music_menu'>
+      <text class="item {{currentTab==index ? 'mact' : ''}}" wx:for="{{navbar}}" wx:key="{{index}}" data-index="{{index}}" bindtap="onNavbarTap">{{item}}</text>
+    </view>
+
+    <view class='music_list'>
+      <!--失物招领-->
+      <scroll-view scroll-y class='recommend_list' hidden="{{currentTab!==0}}">
+
+        <view class="message_list">
+          <block wx:for="{{messages}}" wx:key="{{item.specialid}}">
+            <!--使用数组循环，减少代码冗余-->
+            <!--  <navigator url="../Firstpage/showlost/showlost">点击显示丢失物品的详细信息-->
+            <!--点击后跳转到的页面-->
+            <view class="item" data-id='{{item.specialid}}' bindtap='onShowPick_upTap'>
+              <view class="item-left">
+                <image src="{{item.url}}" class="image" />
+              </view>
+              <view class="item-middle">
+                <view class='lost_thing_message'>
+                  <view class='lost_thing_up'>
+                    <!--<text class="title">{{item.title}}</text>-->
+                    <view class='up_1'>
+                      <image src='{{item.locate}}' style='height:100rpx;width:100rpx;border-radius: 50%;'></image>
+                    </view>
+                    <view class='up_2'>
+                      <view style='font-size:24rpx;'>{{item.title}}</view>
+                      <view style='font-size:20rpx;'>{{item.clock}}</view>
+                    </view>
+                  </view>
+                  <view class='lost_thing_down'>
+                    <!--display：block或flex，要对view，才起作用-->
+                    <view>
+                      <text class="message">{{item.time}}</text>
+                    </view>
+                    <view>
+                      <text class="message">{{item.message}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+            <view class="line"></view>
+            <!--</navigator>-->
+          </block>
+        </view>
+      </scroll-view>
+      <!-- 失物招领end-->
+
+
+      <!-- 寻物启事-->
+      <scroll-view scroll-y hidden="{{currentTab!==1}}" class='recommend_list'>
+        <!--  start-->
+        <view class="message_list">
+          <block wx:for="{{messages}}" wx:key="{{item.specialid}}">
+            <!--使用数组循环，减少代码冗余-->
+            <!--  <navigator url="../Firstpage/showlost/showlost">点击显示丢失物品的详细信息-->
+            <!--点击后跳转到的页面-->
+            <view class="item" data-id='{{item.specialid}}' bindtap='onShowLostTap'>
+              <view class="item-left">
+                <image src="{{item.url}}" class="image" />
+              </view>
+              <view class="item-middle">
+                <view class='lost_thing_message'>
+                  <view class='lost_thing_up'>
+                    <!--<text class="title">{{item.title}}</text>-->
+                    <view class='up_1'>
+                      <image src='{{item.locate}}' style='height:100rpx;width:100rpx;border-radius: 50%;'></image>
+                    </view>
+                    <view class='up_2'>
+                      <view style='font-size:24rpx;'>{{item.title}}</view>
+                      <view style='font-size:20rpx;'>{{item.clock}}</view>
+                    </view>
+                  </view>
+                  <view class='lost_thing_down'>
+                    <!--判断是丢失还是捡到，减少代码冗余-->
+                    <!--display：block或flex，要对view，才起作用-->
+                    <view>
+                      <text class="message">{{item.time2}}</text>
+                    </view>
+                    <view>
+                      <text class="message">{{item.message2}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+            <view class="line"></view>
+            <!--</navigator>-->
+          </block>
+        </view>
+        <!--  end-->
+      </scroll-view>
+      <!-- 寻物启事 end-->
+
+
+      <!-- 话题广场 -->
+      <scroll-view scroll-y hidden="{{currentTab!==2}}" class='recommend_list'>
+        <!--  start-->
+        <view class="message_list">
+          <navigator url="../Firstpage/publish/publish">
+            <!--open-type="switchTab"为何加了switchTab就不行，soga，原来，switchTab用于底部的tab页面间的跳转-->
+            <view class='add_symbol'></view>
+            <!--为什么内部之间的跳转实现不了，但login的可以-->
+          </navigator>
+          <block wx:for="{{publish}}">
+            <!--使用数组循环，减少代码冗余-->
+            <view class='square_item'>
+              <view class='item1'>
+                <!--头像-->
+                <view class='itempic'>
+                  <image src='{{item.url}}' style='width:40px;height:40px;border-radius: 50%;'></image>
+                </view>
+                <!--名称+时间-->
+                <view class='detail'>
+                  <view class='first'>
+                    <view class='id'>{{item.id}}</view>
+                  </view>
+                  <view class='time'>{{item.time}}</view>
+                </view>
+              </view>
+              <!--评论内容-->
+              <view class='content-field'>
+                <view class='contents'>{{item.content}}</view>
+                <view wx:if="{{item.attach.length>0}}">
+                  <!--若图片非空，则不显示出来-->
+                  <image src='{{item.attach}}' style='height:200rpx;width:280rpx; margin-top: 8px;margin-left: 30rpx;'></image>
+                </view>
+                <!--若用户没有添加图片，则不会显示-->
+              </view>
+              <!--转发+评论+点赞-->
+              <view class='bottom'>
+                <view class='pic'>
+                  <image src='http://img.hcfyww.net/image/fenxiang.png' style='width:20px;height:20px;'></image>
+                  <!-- <view class='transmit'>转发</view> -->
+                </view>
+                <view class='pic'>
+                  <image src='http://img.hcfyww.net/image/pinglun.png' style='width:20px;height:20px;'></image>
+                </view>
+                <view class='pic'>
+                  <image src='http://img.hcfyww.net/image/dianzan.png' style='width:20px;height:20px;'></image>
+                </view>
+              </view>
+              <!-- <view class='detail'>></view> -->
+            </view>
+            <view class="line"></view>
+          </block>
+        </view>
+        <!--  end-->
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!--pages/second_dimensional_code/second_dimensional_code.wxml-->
+<view class='container'>
+
+  <block wx:for="{{code_img}}">
+    <!--<navigator src='/pages/second_dimensional_code/print_code.wxml'>-->
+    <!--注意不能有switchTab因为这个适用于tab页面之间的跳转-->
+    <view class='images'>
+      <view class='img'>
+        <view style='  height:200rpx; width:300rpx;margin-bottom:40%;'>
+          <view class='vip' wx:if="{{!item.ifFirst}}">
+            <image src='http://img.hcfyww.net/image/code_img/VIP@2x.png' style='height:80rpx;width:80rpx;border-radius:20%;'></image>
+          </view>
+          <view class='vip' wx:if="{{item.ifFirst}}">
+            <image style='height:80rpx;width:80rpx;border-radius:20%;'></image>
+          </view>
+          <view class='concrete_img' bindtap='click'>
+            <image src='{{item.img1}}'>
+            </image>
+          </view>
+          <!--若并非是第一个二维码则，显示vip图像-->
+        </view>
+      </view>
+      <view class='img'>
+        <view style='  height:200rpx; width:300rpx;margin-bottom:40%;'>
+          <view class='vip' wx:if="{{!item.ifFirst}}">
+            <image src='http://img.hcfyww.net/image/code_img/VIP@2x.png' style='height:80rpx;width:80rpx;border-radius:20%;'></image>
+          </view>
+          <view class='vip' wx:if="{{item.ifFirst}}">
+            <!--让整个布局好看，对齐，当木有vip，则用空的imag来保持-->
+            <image style='height:80rpx;width:80rpx;border-radius:20%;'></image>
+          </view>
+          <view class='concrete_img' bindtap='click'>
+            <image src='{{item.img2}}'></image>
+          </view>
+
+        </view>
+      </view>
+      <!--可用 wx:if="{{item!==code_img[0]}}"判断是否是数组第一个，其余同理-->
+
+    </view>
+    <!--</navigator>-->
+  </block>
+
+</view>
+

@@ -1,0 +1,18 @@
+<!--pages/user/user.wxml-->
+<view>
+  <!--用户盒模型  -->
+  <view class='user'>
+    <!--背景  -->
+    <image class='bg' src="http://img.hcfyww.net/image/bg.png"></image>
+
+    <!--功能盒模型  -->
+    <view class='function'>
+      <navigator url="../center/lost/lost" class='usercenter'>寻物启事</navigator>
+      <navigator url="../center/pick_up/pick_up" class='newscenter'>失物招领</navigator>
+    </view>
+    <navigator url='/pages/Firstpage/Firstpage' open-type="switchTab">
+      <view class='add_symbol'></view>
+      <!--为什么内部之间的跳转实现不了，但login的可以-->
+    </navigator>
+  </view>
+</view>

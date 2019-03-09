@@ -1,0 +1,37 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/image/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="/image/x-go-2.png" ></image>  <!--放置信果logo-->
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <!--<image class="logo"  src="{{userInfo.avatarUrl}}></image> "-->   <!--为何没显示我的微信头像-->
+        <view class="logo"><open-data type="userAvatarUrl"></open-data></view>  <!--如何实现图像为圆形的效果呢-->
+        <image class="wave" src="/image/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/image/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <view class="main-body">
+           <form bindsubmit="formLogin">
+             <view>
+             <input name="inputName" bindinput="bindNameInput" class="input-login1" placeholder="输入手机号" />
+             </view>
+             <view class="hs20"></view>
+             <view>
+             <input name="inputPwd" password="true" bindinput="bindPwdInput" class="input-login2" placeholder="输入密码" bindconfirm="bindInputLogin"  />
+             </view>
+             <view class="hs20"></view>
+             <view>
+             <button class="btn-login" hover-class="btn-login-hover" form-type="submit" >登录</button>
+             <button style='font-size: 40rpx;'  form-type="submit" > 注册</button>             
+             <button class="wx_quick-login"  form-type="submit" > 微信快速登录</button>
+             </view>
+            </form>
+          </view>
+          <text class="copyright">© 2018 梦之队团队 倾情出品</text>
+      </view>
+    </view>
+  </block>
+</view>

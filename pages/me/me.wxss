@@ -1,0 +1,154 @@
+.serach{
+    margin-top: 18rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    padding-left: 25rpx;
+    background-color: #F3F3F3;
+    border-radius: 12rpx;
+
+}
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: -80rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: .95;
+  border-radius: 50%;
+}
+.wave {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  opacity: 0.725;
+  height: 260rpx;
+  width: 2250rpx;
+  animation: wave 10s linear infinite;
+}
+.wave-bg {
+  z-index: 1;
+  animation: wave-bg 10.25s linear infinite;
+}
+.hd {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1000rpx;
+  margin-left: -500rpx;
+  height: 200rpx;
+  transition: all .35s ease;
+}
+.serach_view_show{
+    display: block;
+    color: #808080;
+    padding-left: 285rpx;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    font-size: 18rpx;
+    background-color: #F3F3F3;
+    border-radius: 12rpx;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+}
+.item-left{
+    margin-top: 10rpx;
+    display: table-column
+}
+.item-middle{
+    flex: 1;
+    margin-top: 10rpx;
+    display: table-column
+
+}
+.item_right{
+    display: table-column;
+    margin-top: 10rpx;
+
+}
+.text{
+  color: #000000;
+  font-family:"微软雅黑";
+  line-height: 10rpx;
+  font-size: 22rpx;
+  padding-left: 1rpx;
+}
+.text-middle{
+  color: #000000;
+  font-family:"微软雅黑";
+  line-height: 10rpx;
+  font-size: 22rpx;
+  padding-left: 20rpx;
+}
+
+.image{
+    width: 88rpx; 
+    height: 88rpx;
+}
+.tree_image_left{
+    width: 60rpx; 
+    height: 60rpx;
+    padding-top: 5rpx;
+
+}
+.line{
+    height: 36rpx;
+    width:100%;
+    background-color: #F8F9FA;
+}
+.message_list{
+    display: flex;
+  background-color: #f2f2f2;
+  margin-bottom: 15px;
+}
+.item-tree {
+  padding-left: 32rpx;
+  margin-top: 7rpx;
+   margin-bottom: 7px;
+}
+.groumName{
+    
+  position: absolute;
+  font-weight:lighter;
+  color:#808080;
+  font-family:"宋体";
+  font-size:30rpx;
+  margin-top: 13rpx;
+  padding-left: 30rpx;
+}
+.tree_image_right{
+    position: absolute;
+    right: 15rpx;
+    width: 50rpx; 
+    height: 50rpx;
+}
+.item-tree-middle{
+    margin-top: 15rpx;
+    text-align: center;
+}
+.line-narrow{
+    height: 1px;
+    width:100%;
+    background-color: #E0E1E2;
+}
+.logo {
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  z-index: 2;
+  left: 50%;
+  top: 100rpx;
+  width: 160rpx;
+  height: 160rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: .95;
+}

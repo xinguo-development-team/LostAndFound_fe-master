@@ -1,0 +1,45 @@
+/* pages/message/message.wxss */
+.container{
+  width: 100%;
+  height: 100%;}
+.friends{
+  display:flex;
+  flex-direction:row;
+  width: 100%;
+  height: 120rpx;
+  justify-items: center; /*水平居中*/
+  vertical-align:center;/*垂直居中*/
+align-items:center ;/*子view居中*/
+margin-left: 10rpx;
+}
+.center{
+  display: block;
+  height: 50%;
+  width: 60%;
+  margin-left: 5rpx;
+  justify-content: center;
+  align-items:center;
+}
+.item-tree{
+   display: flex;
+   flex-direction: row;
+width: 100%;
+height:190rpx;
+margin-left: 10rpx;
+justify-content: center;
+align-items: center;
+
+}
+.line{
+  width:100%;
+  height:1rpx;
+  background-color: #E0E1E2;
+ 
+}
+.tree_image_right{
+  
+  width:25%;
+  }
+.message_list{
+  width:100%;
+}
